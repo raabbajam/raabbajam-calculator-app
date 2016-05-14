@@ -2,18 +2,54 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Lame O Calculator</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class="container" id="calculator">
+      <div class="row">
+        <div class="history">22 * 2</div>
+      </div>
+      <div class="row">
+        <div class="display">22</div>
+      </div>
+      <div class="row">
+        <button class="delete">C</button>
+        <button class="clear">CE</button>
+        <button class="operator">+/-</button>
+        <button class="operator">%</button>
+      </div>
+      <div class="row">
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator">/</button>
+      </div>
+      <div class="row">
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator">*</button>
+      </div>
+      <div class="row">
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator">-</button>
+      </div>
+      <div class="row">
+        <button class="number">0</button>
+        <button class="operator">,</button>
+        <button class="equal">=</button>
+        <button class="operator">+</button>
+      </div>
+    </div>
   </body>
 
   <script>
     // You can also require other files to run in this process
-    require('./renderer.js')
+    // require('./renderer.js')
+    const Calculator = require('./Calculator');
+    Calculator.create(document.getElementById('calculator'));
   </script>
 </html>

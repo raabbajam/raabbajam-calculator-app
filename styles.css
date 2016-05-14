@@ -1,0 +1,76 @@
+* {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.row {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.container {
+  width: 300px;
+  overflow: hidden;
+}
+.display, .history {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  width: 280px;
+  text-align: right;
+  height: 40px;
+  font-family: monospace;
+  padding: 0 10px 0 0;
+}
+.display {
+  font-size: 4em;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 0 35px 0;
+}
+.history {
+  font-size: 1em;
+  height: 30px;
+  line-height: 30px;
+  margin: 15px;
+}
+button {
+  background: white;
+  height: 70px;
+  width: 25%;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #888;
+  margin: 0;
+  padding: 0;
+  transition: color 0.1s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+button.double {
+  width: 140px;
+}
+button::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  transform: scale3d(0, 0, 1);
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 1;
+}
+button.clicked::before {
+  opacity: 0.3;
+  transform: scale3d(1.3, 1.3, 1);
+  transition: transform 0.2s, opacity 0.3s;
+}
